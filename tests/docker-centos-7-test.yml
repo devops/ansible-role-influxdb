@@ -1,0 +1,10 @@
+---
+# test file
+
+- name: Install InfluxDB.
+  hosts: localhost
+  roles:
+    - role: role_under_test
+      influxdb_base_dir: "/data/influxdb"
+      influxdb_packages:
+        - influxdb

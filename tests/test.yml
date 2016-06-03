@@ -1,0 +1,10 @@
+---
+# test file
+
+- name: Install InfluxDB.
+  hosts: servers
+  roles:
+    - role: ansible-role-influxdb
+      influxdb_base_dir: "/data/influxdb"
+      influxdb_packages:
+        - '/tmp/influxdb-0.13.0.x86_64.rpm'

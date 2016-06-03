@@ -1,0 +1,15 @@
+---
+# defaults file for ansible-role-influxdb
+
+influxdb_packages:
+  - influxdb
+
+influxdb_repo: True
+influxdb_repo_url: 'https://repos.influxdata.com'
+
+# conf
+influxdb_base_dir: '/var/lib/influxdb'
+influxdb_reporting_disabled: 'true'
+influxdb_meta_dir: '{{ influxdb_base_dir }}/meta'
+influxdb_data_dir: '{{ influxdb_base_dir }}/data'
+influxdb_wal_dir: '{{ influxdb_base_dir }}/wal'

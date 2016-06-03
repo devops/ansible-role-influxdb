@@ -1,0 +1,26 @@
+---
+# tasks for InfluxDB Configure
+
+- name: Copy InfluxDB configure file.
+  template:
+    src: influxdb.conf.j2
+    dest: /etc/influxdb/influxdb.conf
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+  notify: restart influxdb
+
+- name: Ensure InfluxDB data base dir is exists.
+  file:
+    path: '{{ influxdb_base_dir }}'
+    state: directory
+    owner: influxdb
+    group: influxdb
+    mode: 0755
+
+- name: Ensure influxdb service is started and enabled at boot.
+  service:
+    name: influxdb
+    state: started
+    enabled: yes

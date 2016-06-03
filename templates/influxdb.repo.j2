@@ -1,0 +1,6 @@
+[influxdb]
+name = InfluxDB Repository - RHEL $releasever
+baseurl = {{ influxdb_repo_url }}/rhel/$releasever/$basearch/stable
+enabled = 1
+gpgcheck = 1
+gpgkey = {{ influxdb_repo_url }}/influxdb.key
